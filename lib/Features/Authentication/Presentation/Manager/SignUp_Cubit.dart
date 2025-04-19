@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:eventk/Core/dataBase/Cache/Cache_Helper.dart';
-import 'package:eventk/Core/utils/Service_Locator.dart';
+import 'package:eventk/Core/Services/get_it_services.dart';
 import 'package:eventk/Core/utils/Signup_Service.dart';
 import 'package:eventk/Features/Authentication/Data/Model/Signup_Model.dart';
 import 'package:eventk/Features/Authentication/Presentation/Manager/SignUp_State.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+/*Yara❤️*/
 
 class SignupCubit extends Cubit<SignupState> {
   SignupCubit() : super(InitalSignupState());

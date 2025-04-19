@@ -1,13 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:eventk/Core/errors/errorModel.dart';
+import 'package:eventk/Core/errors/exceptions.dart';
+import 'package:eventk/Core/errors/failures.dart';
 import 'package:eventk/Core/utils/End_Point.dart';
 import 'package:eventk/Features/Authentication/Data/Model/Login_Model.dart';
 
-/*Yara Adel*/
+/*Yara Adel❤️*/
 class LoginService {
   final Dio dio;
   LoginService(this.dio);
-
   Future<LoginModel?> requsetForLogin(
       {required String email, required String password}) async {
     try {
@@ -23,14 +24,14 @@ class LoginService {
             validateStatus: (status) => status! >= 200 && status < 300,
           ));
       LoginModel loginModel = LoginModel.fromJson(response.data);
-      return loginModel;
+      return (loginModel);
     } on DioException catch (e) {
       ErrorModel errorModel = ErrorModel.fromJson(e.response!.data);
       final String errorMessage =
           errorModel.message ?? 'oops ,there was an error , try later !';
-      throw Exception(errorMessage);
+      throw CustomExceptions(errorMessage);
     } catch (e) {
-      throw Exception('oops ,there was an error , try later !');
+      throw CustomExceptions((e.toString()));
     }
   }
 }

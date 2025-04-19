@@ -1,5 +1,6 @@
 import 'package:eventk/Core/dataBase/Cache/Cache_Helper.dart';
-import 'package:eventk/Core/utils/Service_Locator.dart';
+import 'package:eventk/Core/Services/get_it_services.dart';
+import 'package:eventk/Features/Authentication/Domain/Auth_repo.dart';
 import 'package:eventk/Features/Authentication/Presentation/Manager/Login_Cubit.dart';
 import 'package:eventk/Core/widgets/navigationHome.dart';
 import 'package:eventk/Features/Authentication/Presentation/Manager/SignUp_Cubit.dart';
@@ -15,9 +16,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/*Yara❤️*/
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setUpSeruvceLocator();
+  setUpServiceLocator();
   await getIt<CacheHelper>().initSharedPreferences();
   runApp(MyApp());
 }
@@ -35,9 +37,6 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) => LoginCubit(),
-            ),
             BlocProvider(
               create: (context) => SignupCubit(),
             ),

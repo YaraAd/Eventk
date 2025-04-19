@@ -1,9 +1,9 @@
-/*Yara Ade*/
+/*Yara❤️*/
 import 'package:dio/dio.dart';
 import 'package:eventk/Core/dataBase/Cache/Cache_Helper.dart';
 import 'package:eventk/Core/errors/errorModel.dart';
 import 'package:eventk/Core/utils/End_Point.dart';
-import 'package:eventk/Core/utils/Service_Locator.dart';
+import 'package:eventk/Core/Services/get_it_services.dart';
 import 'package:eventk/Features/Authentication/Data/Model/Signup_Model.dart';
 
 class SignupService {
